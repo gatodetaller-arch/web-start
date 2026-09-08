@@ -47,6 +47,55 @@ main {
 .logo:hover {
     transform: scale(1.03);
 }
+.sello {
+    margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.contenedor-reflejo {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.contenedor-reflejo img {
+  display: block;
+  width: 120px;
+  height: auto;
+}
+
+/* Luz difusa */
+.contenedor-reflejo::after {
+  content: "";
+  position: absolute;
+
+  width: 70%;
+  height: 140%;
+
+  top: -20%;
+  left: -100%;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.30) 0%,
+    rgba(255, 255, 255, 0.16) 25%,
+    rgba(255, 255, 255, 0.06) 45%,
+    rgba(255, 255, 255, 0) 70%
+  );
+
+  transform: rotate(-25deg);
+
+  pointer-events: none;
+}
+
+.contenedor-reflejo:hover::after {
+  left: 130%;
+  transition: left 0.9s ease-in-out;
+}
+
 
 h1{
     font-size:3rem;
@@ -63,6 +112,7 @@ h1{
 .description{
     max-width:600px;
     margin:auto;
+	margin-bottom: 30px;
     line-height:1.7;
     opacity:.8;
 }
